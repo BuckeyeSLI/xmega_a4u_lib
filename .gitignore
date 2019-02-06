@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Not sure what this is for, but it doesn't seem needed to load the project in Atmel Studio
+*.componentinfo.xml
+
 # User-specific files
 *.suo
 *.user
