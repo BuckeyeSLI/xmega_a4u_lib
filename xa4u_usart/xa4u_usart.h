@@ -10,6 +10,7 @@
 #ifndef XA4U_USART_H
 #define XA4U_USART_H
 
+#include <avr/io.h>
 #include <util/atomic.h>
 
 // USART I/O buffer length - define in main.c to override
