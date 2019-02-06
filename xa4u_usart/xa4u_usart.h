@@ -3,7 +3,8 @@
  * Created : 2/6/2019 1:26:47 AM
  * Author  : Andrew Bennett
  * 
- * Description : Implements a FIFO buffer for interrupt driven USARTs. Does not set up the USARTs, this must be done in main.c or with another library.
+ * Description : Implements FIFO buffers for interrupt driven USARTs. A separate input and output buffer is defined for all 5 USARTs.
+ *               Does not set up the USARTs, this must be done in main.c or with another library.
  */ 
 
 #ifndef XA4U_USART_H
