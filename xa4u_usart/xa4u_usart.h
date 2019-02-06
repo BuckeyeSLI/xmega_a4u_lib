@@ -55,7 +55,7 @@ typedef enum XA4U_USART_ERR_enum
  *  RETURN:
  *		XA4U_USART_ERR_t - Error reporting enum; see above for definitions
  */
-XA4U_USART_ERR_t USART_OutputBufferAdd(XA4U_USART_t usart, uint8_t data[], uint8_t data_size);
+XA4U_USART_ERR_t USART_output_buffer_add(XA4U_USART_t usart, uint8_t data[], uint8_t data_size);
 
 
 /*	Adds a byte of data to the USART input buffer. Meant to be called during USART receive ISR.
@@ -65,7 +65,7 @@ XA4U_USART_ERR_t USART_OutputBufferAdd(XA4U_USART_t usart, uint8_t data[], uint8
  *  RETURN:
  *		XA4U_USART_ERR_t - Error reporting enum; see above for definitions
  */
-XA4U_USART_ERR_t USART_InputBufferAdd(XA4U_USART_t usart, uint8_t data);
+XA4U_USART_ERR_t USART_input_buffer_add(XA4U_USART_t usart, uint8_t data);
 
 
 /*	Reads and removes a byte of data from the USART input buffer.
@@ -75,7 +75,7 @@ XA4U_USART_ERR_t USART_InputBufferAdd(XA4U_USART_t usart, uint8_t data);
  *  RETURN:
  *		XA4U_USART_ERR_t - Error reporting enum; see above for definitions
  */
-XA4U_USART_ERR_t USART_ReadByte(XA4U_USART_t usart, uint8_t *data);
+XA4U_USART_ERR_t USART_read_byte(XA4U_USART_t usart, uint8_t *data);
 
 
 /*	Sends a byte of data from a USART software output buffer to a USART hardware output buffer. Meant to be called during USART send ISR.
@@ -84,7 +84,7 @@ XA4U_USART_ERR_t USART_ReadByte(XA4U_USART_t usart, uint8_t *data);
  *  RETURN:
  *		XA4U_USART_ERR_t - Error reporting enum; see above for definitions
  */
-XA4U_USART_ERR_t USART_SendByte(XA4U_USART_t usart);
+XA4U_USART_ERR_t USART_send_byte(XA4U_USART_t usart);
 
 
 #endif
