@@ -21,20 +21,20 @@
 // FIFO Buffer struct definition - used to construct a single FIFO buffer
 typedef struct FIFOBuffer_struct
 {
-	uint8_t buffer[USART_BUFFER_SIZE];
-	uint8_t buffer_head;
-	uint8_t buffer_tail;
-	uint8_t buffer_size;
+	uint8_t buffer[USART_BUFFER_SIZE];	/* FIFO buffer array */
+	uint8_t buffer_head;				/* Position of newest byte in buffer */
+	uint8_t buffer_tail;				/* Position of oldest byte in buffer */
+	uint8_t buffer_size;				/* Number of bytes stored in buffer */
 } FIFOBuffer_t;
 
 // USART enum definition - used to select which USART a method is targeted at
 typedef enum XA4U_USART_enum
 {
-	XA4U_USART_C0,
-	XA4U_USART_C1,
-	XA4U_USART_D0,
-	XA4U_USART_D1,
-	XA4U_USART_E0
+	XA4U_USART_C0,			/* USART C0 */
+	XA4U_USART_C1,			/* USART C1 */
+	XA4U_USART_D0,			/* USART D0 */
+	XA4U_USART_D1,			/* USART D1 */
+	XA4U_USART_E0			/* USART E0 */
 } XA4U_USART_t;
 
 // Error enum definition - used for error reporting
