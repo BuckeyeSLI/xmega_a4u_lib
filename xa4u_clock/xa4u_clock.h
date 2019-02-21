@@ -15,14 +15,18 @@
 #include <avr/delay.h>
 
 // Clock enum definition - used to select which clock configuration is used
-typedef enum XA4U_CLOCK_enum
+typedef enum CLK_CFG_enum
 {
+	CLK_CFG_2M,			/* 2 MHz internal RC clock */
+	CLK_CFG_2M_DFLL,	/* 2 MHz internal RC clock with DFLL */
+	CLK_CFG_32K,		/* 32.768 kHz internal calibrated clock*/
+	CLK_CFG_32M,		/* 32 MHz internal RC clock */
+	CLK_CFG_32M_DFLL,	/* 32MHz internal RC clock with DFLL */
+	CLK_CFG_EXT,		/* External crystal oscillator */
+	CLK_CFG_EXT_32K		/* External 32.768 kHz oscillator */
+} CLK_CFG_t;
 
-	XA4U_32M,				/* 32 MHz internal RC clock */
-	XA4U_32M_DFLL			/* 32MHz internal RC clock with DFLL */
-} XA4U_CLOCK_t;
 
-
-int clock_setup(XA4U_CLOCK_t mode);
+int clock_setup(CLK_CFG_t config);
 
 #endif
