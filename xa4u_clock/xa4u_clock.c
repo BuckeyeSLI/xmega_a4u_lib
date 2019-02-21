@@ -8,7 +8,7 @@
 #include "xa4u_clock.h"
 
 
-int clock_config(CLK_CFG_t config)
+void clock_config(CLK_CFG_t config)
 {
 	switch(config)
 	{
@@ -111,5 +111,4 @@ int clock_config(CLK_CFG_t config)
 		default:
 			break;
 	}
-	return 0;
 }

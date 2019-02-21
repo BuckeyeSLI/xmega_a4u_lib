@@ -27,10 +27,10 @@ typedef enum CLK_CFG_enum
 	CLK_CFG_EXTSRC		/* External clock source */
 } CLK_CFG_t;
 
-int clock_setup(CLK_CFG_t config);
 /*	Initializes and sets the main CPU clock to the specified source.
  *  INPUTS:
  *		'config' - Clock source to use.
  */
+void clock_setup(CLK_CFG_t config);
 
 #endif
