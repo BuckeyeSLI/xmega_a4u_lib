@@ -23,7 +23,8 @@ typedef enum CLK_CFG_enum
 	CLK_CFG_32M,		/* 32 MHz internal RC clock */
 	CLK_CFG_32M_DFLL,	/* 32MHz internal RC clock with DFLL */
 	CLK_CFG_EXT,		/* External crystal oscillator */
-	CLK_CFG_EXT_32K		/* External 32.768 kHz oscillator */
+	CLK_CFG_EXT_32K,	/* External 32.768 kHz oscillator */
+	CLK_CFG_EXTSRC		/* External clock source */
 } CLK_CFG_t;
 
 

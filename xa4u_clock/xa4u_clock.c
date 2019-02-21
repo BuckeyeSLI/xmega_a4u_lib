@@ -97,6 +97,17 @@ int clock_config(CLK_CFG_t config)
 			OSC.CTRL = OSC.CTRL & ~OSC_RC2MEN_bm;
 			break;
 
+		case CLK_CFG_EXTSRC:
+			// Enable external clock input
+			OSC.CTRL |= OSC_XOSCEN_bm;
+			// Wait for external clock signal to stabilize
+			while(OSC.STATUS != (OSC.STATUS | OSC_XOSCRDY_bm));
+			// Set CPU clock to external clock
+			ccp_write_io((uint8_t*) &CLK.CTRL, CLK_SCLKSEL_XOSC_gc);
+			// Disable 2 MHz clock
+			OSC.CTRL = OSC.CTRL & ~OSC_RC2MEN_bm;
+			break;
+
 		default:
 			break;
 	}
