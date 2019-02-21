@@ -12,7 +12,7 @@
 #define XA4U_CLOCK_H
 
 #include <avr/io.h>
-#include <avr/delay.h>
+#include <avr/cpufunc.h>
 
 // Clock enum definition - used to select which clock configuration is used
 typedef enum CLK_CFG_enum
