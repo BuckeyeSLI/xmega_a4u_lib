@@ -3,8 +3,9 @@
  * Created : 2/12/2019 5:31:33 PM
  * Author  : Andrew Bennett
  * 
- * Description : Functions for setting up the clock source. These are for use at initialization only, they are not guaranteed to work after the initial clock is set.
-                 Note that F_CPU must still be defined in main.c (e.g. "define F_CPU 8000000UL" for an 8 MHz clock).
+ * Description : Functions for setting up the clock source. These are for use at initialization only, they are not guaranteed to work if the OSC or CLK registers are
+ *				 modified by other libraries.
+ *               Note that F_CPU must still be defined in main.c (e.g. "define F_CPU 8000000UL" for an 8 MHz clock).
  */
 
 #ifndef XA4U_CLOCK_H
