@@ -74,7 +74,20 @@ int clock_config(CLK_CFG_t config)
 			else OSC.XOSCCTRL |= OSC_FRQRANGE_04TO2_gc;
 			// Set start-up time for maximum stability
 			OSC.XOSCCTRL |= OSC_XOSCSEL_XTAL_16KCLK_gc;
-			// Enable external crystal
+			// Enable external crystal drive circuit
+			OSC.CTRL |= OSC_XOSCEN_bm;
+			// Wait for external crystal to stabilize
+			while(OSC.STATUS != (OSC.STATUS | OSC_XOSCRDY_bm));
+			// Set CPU clock to external oscillator
+			ccp_write_io((uint8_t*) &CLK.CTRL, CLK_SCLKSEL_XOSC_gc);
+			// Disable 2 MHz clock
+			OSC.CTRL = OSC.CTRL & ~OSC_RC2MEN_bm;
+			break;
+
+		case CLK_CFG_EXT_32K:
+			// Select external 32kHz crystal
+			OSC.XOSCCTRL |= OSC_XOSCSEL_32KHz_gc;
+			// Enable external crystal drive circuit
 			OSC.CTRL |= OSC_XOSCEN_bm;
 			// Wait for external crystal to stabilize
 			while(OSC.STATUS != (OSC.STATUS | OSC_XOSCRDY_bm));
