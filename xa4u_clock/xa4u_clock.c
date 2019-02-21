@@ -7,11 +7,15 @@
 
 #include "xa4u_clock.h"
 
-int clock_setup(XA4U_CLOCK_t mode)
+
+int clock_config(CLK_CFG_t config)
 {
-	switch(mode)
+	switch(config)
 	{
-		case XA4U_32M:
+		case CLK_CFG_2M:
+			break;
+		case CLK_CFG_32K:
+			break;
 			// Enable 32 MHz clock
 			OSC.CTRL |= OSC_RC32MEN_bm;
 			// Wait for clock to stabilize
@@ -23,7 +27,7 @@ int clock_setup(XA4U_CLOCK_t mode)
 			OSC.CTRL = OSC.CTRL & ~OSC_RC2MEN_bm;
 			break;
 
-		case XA4U_32M_DFLL:
+		case CLK_CFG_32M_DFLL:
 			// Enable 32 MHz clock and 32 kHz clock
 			OSC.CTRL |= OSC_RC32MEN_bm | OSC_RC32KEN_bm;
 			// Wait for clocks to stabilize
@@ -40,6 +44,7 @@ int clock_setup(XA4U_CLOCK_t mode)
 			OSC.CTRL = OSC.CTRL & ~OSC_RC2MEN_bm;
 			break;
 
+		case CLK_CFG_EXT:
 		default:
 			break;
 	}
